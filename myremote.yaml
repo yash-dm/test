@@ -1,0 +1,26 @@
+apiVersion: gitkube.sh/v1alpha1
+kind: Remote
+metadata:
+  creationTimestamp: null
+  name: example
+  namespace: default
+spec:
+  authorizedKeys:
+  - |
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIc1KNSczSqNrxMWm96FxeJbBe93KaxKM5nognlqFK6nFaLzdpkigNLqWa8mtTgx8ISTDtjdIhWAmt3apHVuVnxmVMGqAu1y3aE3RMkKFoRviUa95ab5r5rnldSkNDCd+/yPdzGAujegy9kGEH6fJqfevAPZIbXazHzRo09wIqAtidkA7o9+iXHT2LPjg1Y24dYKUFCRTMquCE0GIyxU+Rkuq3W2QrpcPct76RRIpCUrXLN0ESPoEqXxm+EuDqXFca2r8ImtMlvFMVR8gYhAFs3vhiVVF5Qwf73QD8pZ2MjwOoRge9R862oTpQrSIQ7HyYKYfaYY7C+NlDjMCzoaBR lenovo@lenovo
+  deployments:
+  - containers:
+    - dockerfile: Dockerfile
+      name: app
+      path: ./
+    name: app
+  manifests:
+    helm: {}
+    path: ""
+  registry:
+    credentials:
+      secretKeyRef:
+        key: ""
+status:
+  remoteUrl: ""
+  remoteUrlDesc: ""
